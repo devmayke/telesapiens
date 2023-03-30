@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+
+
+   <style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 inherit;
+    outline: 0;
+}
+
+:root {
+    --color-border: #13B7CD;
+    --bg-btn: #BAE10E;
+    --color-text: #009ABA;
+    --bg-form: #FBFBFB;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    max-width: 50vw;
+    display: flex;
+    justify-content: center;
+    padding: 40px 30px;
+    border: 1px solid blue;
+    border-radius: 50px;
+    background: var(--bg-form);
+
+}
+
+form .form-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+}
+
+.form-container h1 {
+    text-align: center;
+    margin: auto;
+    font-size: 25px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    background: none;
+    color: var(--color-text);
+}
+
+form input,
+form select {
+    margin: 5px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+}
+
+form input {
+    margin-top: 15px;
+    background: var(--bg-btn);
+    border: none;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 104.5%;
+    color: #121515;
+}
+.bem-vindo{
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:1200px) {
+    .bem-vindo{
+        display:none;
+    }
+    
+    
+}
+@media screen and (max-width:1024px) {
+    .bem-vindo{
+        display:none;
+    }
+    
+}
+
+@media screen and (max-width:768px) {
+    
+    
+}
+
+@media screen and (max-width:480px) {
+    .bem-vindo{
+        display:flex;
+    }
+    form .form-container{
+        display:none;
+    }
+    body{
+        justify-content: end;
+    }
+    
+}
+    </style>
+</head>
+
+
+
+
+<body>
+    <main>
+        <form action="http://localhost:5000/api/createtoken" method='POST'>
+
+
+            <div class="bem-vindo">
+                <h1>Bem vindo!</h1>
+                <p>
+                    Acesse e encontre seu curso
+                </p>
+            </div>
+            
+            <div class="container">
+
+            <h1>
+                Inserir Curso "Teórico"
+            </h1>
+            <br>
+            <label for="curso">Escolha o Curso:</label>
+            <select onchange='handleCourseChange()' class="curso" name="curso" id="_course">
+                    <option value="1">Adobe inDesign</option>
+            </select>
+
+            <label for="aula">Escolha a Aula:</label>
+            <select onchange='handleLessonChange()' name="aula" id="_lesson">
+                <option value=0 selected>Selecione</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+                <option value=11>11</option>
+                <option value=12>12</option>
+                <option value=13>13</option>
+                <option value=14>14</option>
+                <option value=15>15</option>
+                <option value=16>16</option>
+            </select>
+
+            <label for="regiao">Escolha a Regiao:</label>
+            <select onchange='handleRegionChange()' name="regiao" id="_region">
+                <option value=0 selected>Selecione</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+            </select>
+
+
+            <!-- <input  type="file" accept=".zip" /> -->
+            <label class="choose_file">
+                ESCOLHER ARQUIVO ZIP
+
+                <!-- <form enctype="multipart/form-data" action="/upload/image" method="post"> -->
+                <input onchange="chooseFile(this)" style="visibility: hidden;" id="file" type="file"
+                    accept="zip,application/octet-stream,application/zip,application/x-zip,application/x-zip-compressed" />
+                <!-- </form> -->
+                <br>
+            </label>
+            <span id="file-name" class="file-box"></span>
+
+            <button class="submit" onclick='sendFile()'>Enviar Aula</button>
+
+
+            <!-- <img class='image-bottom' src="https://i.imgur.com/jnAfHl8.png"> -->
+
+
+
+
+        </div>
+        </form>
+    </main>
+
+    <script>
+    let curso = document.querySelector(".curso")
+    let getInfoCourses = async function (url) {
+        let response = await fetch(url)
+        let dataJson = await response.json()
+        console.log(dataJson)
+        let data = await dataJson
+        curso.innerHTML = ""
+        data.map((el, index) => {
+            curso.innerHTML += `<option class="option"value="${el.idCourses}">${el.courseName}</option>`
+        })
+    }
+
+    getInfoCourses("http://localhost:5000/api/getinfocourses")
+    
+    </script>
+
+    <script>
+
+        var course = 0;
+        var lesson = 0;
+        var region = 0;
+
+        const sendFile = async () => {
+
+            if (course == 0 || lesson == 0 || region == 0) {
+                alert("Por favor, selecione todos os campos");
+                return;
+            }
+
+            if (document.getElementById('file').files.length == 0) {
+                alert("Por favor, selecione um arquivo");
+                return;
+            }
+
+            const dataForm = new FormData();
+            dataForm.append('file', document.getElementById("file").files[0]);
+            console.log(dataForm.get('file'));
+            const res = await fetch(`/api/uploadCourse/${course}/${lesson}/${region}`, {
+
+                // const res = await fetch(location.origin + `/api/uploadCourse/:`, {
+                // const res = await fetch('/api/uploadCourse', {
+                headers: {
+                    'Authorization': `Bearer ${"pR889Q6+6CI9VuF"}`
+                },
+                method: 'POST',
+                body: dataForm,
+
+            }).then(response => {
+                console.log(response);
+                alert("Enviado com sucesso!");
+            }).catch(error => {
+                console.log('Error while posting data', error.message);
+                alert('Error while posting data: \nError' + error.message);
+            });
+            // const data = await res.json();
+            // console.log(data);
+        };
+
+
+        function handleCourseChange() {
+            course = document.getElementById("_course").value
+        }
+
+        function handleLessonChange() {
+            lesson = document.getElementById("_lesson").value
+        }
+
+        function handleRegionChange() {
+            region = document.getElementById("_region").value
+        }
+
+
+        function chooseFile(target) {
+            document.getElementById("file-name").innerHTML = target.files[0].name;
+        }
+
+    </script>
+
+
+</body>
+
+</html>

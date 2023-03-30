@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerar Token</title>
+    <style>
+      * {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        position: relative;
+        /* background-image: url(http://www.armarinhospolo.com.br/wp-content/uploads/2017/07/azul-fundo-site-400x250.jpg); */
+        background-color: #346da5;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .container {
+        /* background: rgba(0, 0, 0, 0.2); */
+        height: 35vh;
+        padding: 70px 0px 70px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 300px;
+        max-height: 500px;
+        /* min-height: 270px; */
+        /* border: 2px solid white;
+      border-radius: 25px; */
+      }
+
+      .container select {
+        font-size: 17px;
+        text-overflow: "";
+        padding: 7px;
+        width: 70%;
+        border-radius: 10px;
+      }
+
+      .regiao {
+        /* color: white; */
+        font-size: 600;
+        /* background: #FD8942; */
+      }
+
+      .container select .laranja {
+        color: white;
+        font-size: 600;
+        background: #fd8942;
+        padding: 7px;
+      }
+
+      .container select .laranja:hover {
+        background: #fd8942;
+        transform: scale(1.1);
+      }
+
+      .container select .amarelo {
+        color: white;
+        font-size: 600;
+        background: #f6b33e;
+        padding: 7px;
+      }
+
+      .container select .verde {
+        color: white;
+        font-size: 600;
+        background: #008037;
+        padding: 7px;
+      }
+
+      .container select .azul {
+        color: white;
+        font-size: 600;
+        background: #0a2549;
+        padding: 7px;
+      }
+
+      .submit {
+        font-size: 18px;
+        padding: 7px;
+        width: 70%;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      .image-top {
+        width: 16vw;
+        position: absolute;
+        /* left: 20%; */
+        top: 16%;
+        /* background-repeat: no-repeat;
+      background-size: cover; */
+      }
+
+      .image-bottom {
+        width: 10vw;
+        position: absolute;
+        /* left: 20%; */
+        bottom: 8%;
+        min-width: 140px;
+        /* background-repeat: no-repeat;
+      background-size: cover; */
+      }
+
+      @media screen and (max-width: 1000px) {
+        .container {
+          margin-top: -100px;
+        }
+
+        /* 
+       .image-top {
+        width: 90%;
+        left: 5%;
+        top: 7%;
+
+      }
+      } */
+      }
+
+      @media screen and (max-width: 600px) {
+        .image-top {
+          width: 70%;
+        }
+
+        .container {
+          width: 85%;
+        }
+      }
+
+      @media screen and (max-width: 600px) and (max-height: 830px) {
+        .container {
+          width: 85%;
+          margin-top: 30%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!-- <img class="image-top" src="https://i.imgur.com/3x1ySpR.png"> -->
+
+      <form class="container" action="/api/createtoken" method="POST">
+        <select name="url">
+          <!-- <option value="http://localhost:4000" selected>LocalHost</option>
+          <option value="https://appaula.prepara.com.br">Prepara</option>
+          <option value="https://appaula.microlins.com.br">Microlins</option>
+          <option value="https://appaula.sos.com.br">SoS</option>
+          <option value="https://appaula.people.com.br">People</option> -->
+          <option value="https://appaula.microlins.com.br" selected>Microlins</option>
+          <option value="https://appaula.prepara.com.br">Prepara</option>
+          <option value="https://appaula.sos.com.br">SoS</option>
+          <option value="https://appaula.people.com.br">People</option>
+          <option value="https://appaula.ensinamais.com.br">Ensina Mais</option>
+        </select>
+
+        <select name="curso">
+          <option value="1" selected>Empreendedorismo</option>
+          <option value="2">Escrita Fiscal e Contabilidade</option>
+          <option value="3">Adobe inDesign</option>
+          <option value="4">Técnicas de Recepção</option>
+          <option value="5">Cuidador de Idosos</option>
+          <option value="6">Atendente de Farmácia</option>
+          <option value="7">Auxiliar Médico</option>
+          <option value="8">Secretariado</option>
+          <option value="9">Segurança no Trabalho</option>
+          <option value="10">Introdução à Informática</option>
+          <option value="11">Vendas</option>
+          <option value="12">Atendimento ao Cliente</option>
+          <option value="13">Assistente de Adm. Financeira</option>
+          <option value="14">Liderança</option>
+          <option value="15">Gestão de Pessoas</option>
+          <option value="16">Assistente de Propaganda e Marketing</option>
+          <option value="17">Matemática Financeira</option>
+          <option value="18">Assistente de Departamento Pessoal</option>
+          <option value="19">Atendente Farmácia II</option>
+          <option value="20">Assistente de Recursos Humanos</option>
+          <option value="21">Assistente Administrativo</option>
+          <option value="22">Crédito e Cobrança</option>
+          <option value="23">Marketing Digital I</option>
+          <option value="24">Custos</option>
+          <option value="25">Segurança na Era Digital</option>
+          <option value="26">Compras e Estoques</option>
+          <option value="27">Operador de Caixa</option>
+          <option value="28">Internet e Outlook</option>
+          <option value="29">Internet, Redes Sociais e Apps</option>
+          <option value="30">Google e Redes Sociais</option>
+          <option value="31">Operador de Telemarketing</option>
+          <option value="32">Assistente de Saúde Bucal</option>
+          <option value="33">Assistente de Logística</option>
+          <option value="34">Marketing Digital II</option>
+          <option value="101">E+ Matemática - Fase 1 - Nível 1</option>
+          <option value="102">E+ Português - Fase 1 - Nível 1</option>
+          <option value="99">Curso de Testes</option>
+        </select>
+
+        <select name="aula">
+          <option value="1" selected>Aula 1</option>
+          <option value="2">Aula 2</option>
+          <option value="3">Aula 3</option>
+          <option value="4">Aula 4</option>
+          <option value="5">Aula 5</option>
+          <option value="6">Aula 6</option>
+          <option value="7">Aula 7</option>
+          <option value="8">Aula 8</option>
+          <option value="9">Aula 9</option>
+          <option value="10">Aula 10</option>
+          <option value="11">Aula 11</option>
+          <option value="12">Aula 12</option>
+          <option value="13">Aula 13</option>
+          <option value="14">Aula 14</option>
+          <option value="15">Aula 15</option>
+          <option value="16">Aula 16</option>
+        </select>
+
+        <select name="atividade">
+          <option value="1" selected>Teórico</option>
+          <option value="2">Mão na massa</option>
+          <option value="3">Pense e responda</option>
+          <option value="4">Teste seus conhecimentos</option>
+          <option value="5">Desafio do dia</option>
+          <option value="6">Avaliação final</option>
+          <option value="7">Hora do livro</option>
+        </select>
+
+        <!-- <select class="regiao" name="regiao">
+        <option class="laranja" value="1" selected>Laranja</option>
+        <option class="amarelo" value="2">Amarelo</option>
+        <option class="verde" value="3">Verde</option>
+        <option class="azul" value="4">Azul</option>
+      </select> -->
+
+        <select class="regiao" name="regiao">
+          <option value="1" selected>Região 1</option>
+          <option value="2">Região 2</option>
+          <option value="3">Região 3</option>
+          <option value="4">Região 4</option>
+        </select>
+
+        <input class="submit" type="submit" value="Acessar" />
+      </form>
+
+      <img class="image-bottom" src="https://i.imgur.com/jnAfHl8.png" />
+    </main>
+
+    <script>
+      const regiao = document.querySelector(".regiao");
+      regiao.addEventListener("change", () => {
+        const regiaoSelecionada = regiao.options[regiao.selectedIndex].value;
+        // console.log(parseInt(regiaoSelecionada));
+        // switch (parseInt(regiaoSelecionada)) {
+        //   case 1:
+        //     regiao.style.background = "#FD8942"
+        //     regiao.style.color = "white"
+        //     break;
+        //   case 2:
+        //     regiao.style.background = "#F6B33E"
+        //     regiao.style.color = "white"
+        //     break;
+        //   case 3:
+        //     regiao.style.background = "#008037"
+        //     regiao.style.color = "white"
+        //     break;
+        //   case 4:
+        //     regiao.style.background = "#0A2549"
+        //     regiao.style.color = "white"
+        //     break;
+        // }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/administrativo/style.css">
+</head>
+
+<body>
+
+    <div class="toast">toast</div>
+
+    <div class="modal-wrapper-editor">
+        <div class="modal-container-editor">
+            <img class="modal-img-editor" src="./img/icon_certeza_sair.png" alt="">
+            <div class="modal-texto-editor">
+                <form class="formEditor">
+                    <label>Usuário</label>
+                    <input type="text" name="user" id="username"/>
+                    <label>Senha</label>
+                    <input type="text" name="password" id="password"/>
+                    <label class="label__function">Função</label>
+                    <select id="role" name="role">
+                        <!-- <option value="master">Master</option> -->
+                        <option value="admin">Editor</option>
+                        <option value="viewer">Visualizador</option>
+                    </select>
+                    <input type="button" id="update" value="Salvar"/>
+                </form>                
+            </div>    
+            <span class="modal-btns" style="width: 100%; align-items: center; justify-content: space-around;flex:3.5;">
+                <div class="modal-btn-sim" >Confirmar</div>
+                <div class="modal-btn-nao" >Cancelar</div>
+            </span>      
+        </div>
+    </div>
+    
+
+    <span class="profile-container">
+        <img class="profile-logo" src="./img/profile.svg" alt="">
+        <div class="profile-popup">
+            <div class="profile-btn-logout">Log Out</div>
+            <div class="profile-btn-curso">Adicionar Curso</div>
+            <div class="profile-btn-home">Página Principal</div>
+        </div>
+    </span>
+
+
+    <div class="modal_list-users">
+        <section class="listUsers">
+            <div class="infoUser">
+                <div class="registerUser">
+                    <div class="usernameDefault">Usuário</div>
+                    <div class="passwordDefault">Senha</div>
+                    <div class="roleDefault">Função</div>
+                    <button style="opacity:0" class="buttonEdit">Editar</button>
+                    <button style="opacity:0" class="buttonDelete">Deletar</button>
+                </div>
+            </div>
+        </section>
+        <button id="addUser">Adicionar Usuário</button>
+    </div>
+
+    <script src="js/administrativo/script.js"></script>
+</body>
+
+</html>

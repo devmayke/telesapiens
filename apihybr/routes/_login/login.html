@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>Login</title>
+  </head>
+
+  <link rel="stylesheet" href="css/login/style.css">
+
+  <body>
+    <div class="modal-wrapper">
+      <div class="modal-container">
+        <img class="modal-img" src="" alt="">
+        <div class="modal-texto"></div>
+        <span style="display:flex;width: 100%; align-items: center; justify-content: space-around;flex:3.5;">
+          <div class="modal-btn-sim" ></div>
+          <div class="modal-btn-nao" ></div>
+        </span>
+      </div>
+    </div>
+    
+    <span class="logo-mobile-wrapper">
+      <img class="logo-moveedu-mobile"src='./img/logo-moveedu.png' alt="">
+    </span>
+
+    <span class="logo-container">
+      <a href="https://moveedu.com.br/">
+        <img class="logo-logo" src="./img/logo_movedu.png" alt="" >
+      </a>
+    </span>
+
+    <form action="/api/admroutes" method="POST">
+      <div class="form-container">
+        <h1>Login</h1>
+        <label style="margin-left: 20px;" >Usuario</label>
+        <input style=" width:100%;background: #F7F7F7;border: 1px solid #E2E2E2;box-shadow: none;" id="username" type="text" name="user">
+        <label style="margin-left: 20px;">Senha</label>
+        <input style="width:100%;background: #F7F7F7;border: 1px solid #E2E2E2;box-shadow: none;" id="password" type="password" name="password"> 
+        <label style="margin-left: 20px;margin-top: 20px;">Selecione o modo</label> 
+  
+        <fieldset style="display:flex; border:none; width:100%;justify-content:space-between; padding:10px 10%;">
+          <span>
+            <label style="display:flex;font-size:14px;"for="add_course">
+              <input  style="margin:16px 0px;margin-right:-10px;border: none;background: none;box-shadow: none;" id="add_course" name="mode" value="add_course" type="radio">
+              Adicionar Scorm
+            </label>
+            <label style="display:flex;font-size:14px;margin-top: 10px;" for="edit_course">
+              <input style="margin:16px 0px;margin-right:-10px;border: none;background: none; box-shadow: none;" id="edit_course" name="mode" value="edit_course" type="radio">
+              Editar Cursos
+            </label>
+          </span>
+          <span >
+            <label style="display:flex;font-size:14px;" for="view_course">
+              <input style="margin:16px 0px;margin-right:-10px;border: none;background: none; box-shadow: none;" id="view_course" name="mode" value="view_course" type="radio" checked>
+              Visualizar Cursos
+            </label> 
+            <label style="display:flex;font-size:14px; margin-top: 10px;" for="register_user">
+              <input style="margin:16px 0px;margin-right:-10px;border: none;background: none; box-shadow: none;" id="register_user" name="mode" value="register_user" type="radio" checked>
+              Cadastrar Usuário
+            </label>           
+          </span>                       
+        </fieldset>
+        <input style="cursor: pointer;" class="submit" type="submit" value="Acessar">
+
+      </div>
+    </form>
+
+    <script src="js/login/script.js">
+    
+  </script>
+
+  </body>
+
+</html>

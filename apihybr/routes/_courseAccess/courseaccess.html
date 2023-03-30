@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/courseAccess/style.css">
+</head>
+
+
+
+
+<body>
+  <div class="modal-wrapper">
+    <div class="modal-container">
+      <img class="modal-img" src="" alt="">
+      <div class="modal-texto"></div>
+      <span style="display:flex;width: 100%; align-items: center; justify-content: space-around;flex:3.5;">
+        <div class="modal-btn-sim" >Confirmar</div>
+        <div class="modal-btn-nao" >Cancelar</div>
+      </span>
+    </div>
+  </div>
+  <span class="profile-container">
+    <img class="profile-logo" src="./img/profile.svg" alt="">
+    <div class="profile-popup">
+      <div class="profile-btn-logout">Log Out</div>
+      <div class="profile-btn-curso">Adicionar Curso</div>
+      <div class="profile-btn-home">Página Principal</div>
+    </div>
+  </span>
+    <main>
+     
+        <img src="img/escolha_mobile.png" class='div_escolha' /> 
+
+        <form action="" method='POST'>
+            <div class="form-container">
+                <h1>Acesse seu curso</h1>
+
+                <!-- <select class="url" name="url">
+                    <option value="https://appaula.prepara.com.br" selected>Selecione a instituição (opcional)</option>
+                    <option value="https://appaula.prepara.com.br" >Prepara</option>
+                    <option value="https://appaula.microlins.com.br">Microlins</option>
+                    <option value="https://appaula.sos.com.br">SoS</option>
+                    <option value="https://appaula.people.com.br">People</option>
+                </select> -->
+               
+                    <div class="dropdown">
+                      <span class="line"></span>
+                        <div class="campo campoinstituicao">Selecione a instituição</div>
+                        <ul class="lista listainstituicao">
+                            <li class="item" id="https://appaula.prepara.com.br">Prepara</li>
+                            <li class="item" id="https://appaula.microlins.com.br">Microlins</li>
+                            <li class="item" id="https://appaula.sos.com.br">SoS</li>
+                            <li class="item" id="https://appaula.people.com.br">People</li>
+			                      <li class="item" id="https://appaula.ensinamais.com.br">Ensina Mais</li>  
+			                      <!-- <li class="item" id="https://appaula.ensinamais.com.br">Ensina Mais</li>   -->
+                      </ul>
+                        <input name="url" id='url' type="hidden" value="">
+                        <span class="line line2"></span>
+                    </div>
+              
+
+
+                <!-- <select class="curso" name="curso">
+                    <option value="" disabled selected>Selecione o curso</option>
+                    <option value="1">Adobe inDesign</option>
+                </select> -->
+               
+                    <div class="dropdown">
+                      <span class="line"></span>
+                        <div class="campo campocurso">Selecione o curso</div>
+                        <ul class="lista listacurso">
+                            <li class="item">Adobe inDesign</li>
+                        </ul>
+                        <input  name="curso" id='curso' type="hidden" value="">
+                        <span class="line line2"></span>
+                    </div>
+              
+
+
+
+                <!-- <select class="aula" name="aula">
+                    <option value="" disabled selected>Selecione a aula</option>
+                    <option value="1">Aula 1</option>
+                    <option value="2">Aula 2</option>
+                    <option value="3">Aula 3</option>
+                    <option value="4">Aula 4</option>
+                    <option value="5">Aula 5</option>
+                    <option value="6">Aula 6</option>
+                    <option value="7">Aula 7</option>
+                    <option value="8">Aula 8</option>
+                    <option value="9">Aula 9</option>
+                    <option value="10">Aula 10</option>
+                    <option value="11">Aula 11</option>
+                    <option value="12">Aula 12</option>
+                    <option value="13">Aula 13</option>
+                    <option value="14">Aula 14</option>
+                    <option value="15">Aula 15</option>
+                    <option value="16">Aula 16</option>
+                </select> -->
+                <div class="dropdown">
+                  <span class="line"></span>
+                  <div class="campo campoaula">Selecione a aula</div>
+                  <ul class="lista listaaula">
+                    <li class="item" id="1">Aula 1</li>
+                    <li class="item" id="2">Aula 2</li>
+                    <li class="item" id="3">Aula 3</li>
+                    <li class="item" id="4">Aula 4</li>
+                    <li class="item" id="5">Aula 5</li>
+                    <li class="item" id="6">Aula 6</li>
+                    <li class="item" id="7">Aula 7</li>
+                    <li class="item" id="8">Aula 8</li>
+                    <li class="item" id="9">Aula 9</li>
+                    <li class="item" id="10">Aula 10</li>
+                    <li class="item" id="11">Aula 11</li>
+                    <li class="item" id="12">Aula 12</li>
+                    <li class="item" id="13">Aula 13</li>
+                    <li class="item" id="14">Aula 14</li>
+                    <li class="item" id="15">Aula 15</li>
+                    <li class="item" id="16">Aula 16</li>
+                    <li class="item" id="17">Aula 17</li>
+                    <li class="item" id="18">Aula 18</li>
+                    <li class="item" id="19">Aula 19</li>
+                    <li class="item" id="20">Aula 20</li>
+                    <li class="item" id="21">Aula 21</li>
+                    <li class="item" id="22">Aula 22</li>
+                    <li class="item" id="23">Aula 23</li>
+                    <li class="item" id="24">Aula 24</li>
+                    <li class="item" id="25">Aula 25</li>
+                  </ul>
+                  <input name="aula" id="aula" type="hidden" value="">
+                  <span class="line line2"></span>
+              </div>
+
+                <!-- <select class="atividade" name="atividade">
+                    <option value="" disabled selected>Selecione a atividade</option>
+                    <option value="1">Teórico</option>
+                    <option value="2">Mão na massa</option>
+                    <option value="3">Pense e responda</option>
+                    <option value="4">Teste seus conhecimentos</option>
+                </select> -->
+                <div class="dropdown">
+                  <span class="line"></span>
+                  <div class="campo campoatividade">Selecione a atividade</div>
+                  <ul class="lista listaatividade">
+                    <li class="item" id="1">Teórico</li>
+                    <li class="item" id="2">Mão na Massa</li>
+                    <li class="item" id="3">Pense e Responda</li>
+                    <li class="item" id="4">Teste seus Conhecimentos</li>
+                    <li class="item" id="5">Desafio do Dia</li>
+                    <li class="item" id="6">Avaliação Final</li>
+                    <li class="item" id="7">Hora do Livro</li>
+                  </ul>
+                  <input name="atividade" id='atividade' type="hidden" value="">
+                  <span class="line line2"></span>
+              </div>
+
+
+                <!-- <select class="regiao" name="regiao">
+                    <option value="" disabled selected>Selecione a região</option>
+                    <option value="1">Região 1</option>
+                    <option value="2">Região 2</option>
+                    <option value="3">Região 3</option>
+                    <option value="4">Região 4</option>
+                </select> -->
+                <div class="dropdown">
+                  <span class="line"></span>
+                  <div class="campo camporegiao">Selecione a Região</div>
+                  <ul class="lista listaregiao">
+                      <li class="item" id="1">Região 1</li>
+                      <li class="item" id="2">Região 2</li>
+                      <li class="item" id="3">Região 3</li>
+                      <li class="item" id="4">Região 4</li>
+                  </ul>
+                  <input name="regiao" id='regiao' type="hidden" value="">
+                  <span class="line line2"></span>
+              </div>
+
+
+                <input style="cursor: pointer;" class="submit" type="submit" value="Acessar">
+            </div>
+        </form>
+    </main>
+
+    <script src="js/courseAccess/script.js"></script>
+    <script>   
+      document.querySelector('form').action = window.location.protocol + "//" + window.location.hostname + "/api/createtoken"
+    </script>
+
+</body>
+
+</html>
